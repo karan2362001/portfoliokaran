@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karan Patani | AI/ML Backend Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #0f0f0f;
+            color: #f2f2f2;
+            scroll-behavior: smooth;
+        }
+        
+        .grid-bg {
+            background-image: 
+                linear-gradient(rgba(42, 42, 42, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(42, 42, 42, 0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+        
+        .nav-item {
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+        
+        .nav-item:hover {
+            color: #7f5af0;
+            transform: translateX(5px);
+        }
+        
+        .nav-item span {
+            transition: all 0.3s ease;
+        }
+        
+        .nav-item-mobile {
+            transition: all 0.3s ease;
+            color: white;
+        }
+        
+        .nav-item-mobile:hover {
+            color: #7f5af0;
+        }
+        
+        .project-card {
+            transition: all 0.3s ease;
+            border: 1px solid #2a2a2a;
+        }
+        
+        .project-card:hover {
+            border-color: #7f5af0;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(127, 90, 240, 0.2);
+        }
+        
+        .skill-pill {
+            transition: all 0.3s ease;
+        }
+        
+        .skill-pill:hover {
+            background: linear-gradient(45deg, #7f5af0, #5eead4);
+            color: white;
+            transform: scale(1.05);
+        }
+        
+        .typewriter {
+            border-right: 2px solid #7f5af0;
+            animation: blink 0.75s step-end infinite;
+        }
+        
+        @keyframes blink {
+            from, to { border-color: transparent }
+            50% { border-color: #7f5af0 }
+        }
+        
+        .particle {
+            position: absolute;
+            background-color: rgba(127, 90, 240, 0.5);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        
+        .section {
+            scroll-margin-top: 100px;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            .mobile-nav {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body class="grid-bg min-h-screen relative overflow-x-hidden">
+    <!-- Particles Background -->
+    <div id="particles"></div>
+    
+    <!-- Left Navigation (Desktop) -->
+    <div class="fixed left-0 top-0 h-full w-16 md:w-20 flex flex-col items-center justify-center z-50 bg-black bg-opacity-70 backdrop-blur-sm hidden md:flex">
+        <div class="nav-menu h-full flex flex-col items-center justify-center space-y-8 py-10">
+            <a href="#home" class="nav-item group text-2xl text-white hover:text-7f5af0" title="Home">
+                <i class="fas fa-user-astronaut group-hover:hidden"></i>
+                <span class="hidden group-hover:inline text-sm">Home</span>
+            </a>
+            <a href="#about" class="nav-item group text-2xl text-white hover:text-7f5af0" title="About">
+                <i class="fas fa-microchip group-hover:hidden"></i>
+                <span class="hidden group-hover:inline text-sm">About</span>
+            </a>
+            <a href="#projects" class="nav-item group text-2xl text-white hover:text-7f5af0" title="Projects">
+                <i class="fas fa-code-branch group-hover:hidden"></i>
+                <span class="hidden group-hover:inline text-sm">Projects</span>
+            </a>
+            <a href="#skills" class="nav-item group text-2xl text-white hover:text-7f5af0" title="Skills">
+                <i class="fas fa-cogs group-hover:hidden"></i>
+                <span class="hidden group-hover:inline text-sm">Skills</span>
+            </a>
+            <a href="#resume" class="nav-item group text-2xl text-white hover:text-7f5af0" title="Resume">
+                <i class="fas fa-id-card group-hover:hidden"></i>
+                <span class="hidden group-hover:inline text-sm">Resume</span>
+            </a>
+            <a href="#contact" class="nav-item group text-2xl text-white hover:text-7f5af0" title="Contact">
+                <i class="fas fa-paper-plane group-hover:hidden"></i>
+                <span class="hidden group-hover:inline text-sm">Contact</span>
+            </a>
+        </div>
+    </div>
+    
+    <!-- Mobile Navigation -->
+    <div class="fixed bottom-0 left-0 right-0 bg-black bg-opacity-70 backdrop-blur-sm z-50 flex justify-around py-4 md:hidden">
+        <a href="#home" class="nav-item-mobile group flex flex-col items-center px-2 py-1">
+            <i class="fas fa-user-astronaut text-xl text-7f5af0"></i>
+            <span class="text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity">Home</span>
+        </a>
+        <a href="#about" class="nav-item-mobile group flex flex-col items-center px-2 py-1">
+            <i class="fas fa-microchip text-xl text-7f5af0"></i>
+            <span class="text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity">About</span>
+        </a>
+        <a href="#projects" class="nav-item-mobile group flex flex-col items-center px-2 py-1">
+            <i class="fas fa-code-branch text-xl text-7f5af0"></i>
+            <span class="text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity">Projects</span>
+        </a>
+        <a href="#skills" class="nav-item-mobile group flex flex-col items-center px-2 py-1">
+            <i class="fas fa-cogs text-xl text-7f5af0"></i>
+            <span class="text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity">Skills</span>
+        </a>
+        <a href="#resume" class="nav-item-mobile group flex flex-col items-center px-2 py-1">
+            <i class="fas fa-id-card text-xl text-7f5af0"></i>
+            <span class="text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity">Resume</span>
+        </a>
+        <a href="#contact" class="nav-item-mobile group flex flex-col items-center px-2 py-1">
+            <i class="fas fa-paper-plane text-xl text-7f5af0"></i>
+            <span class="text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity">Contact</span>
+        </a>
+    </div>
+    
+    <!-- Main Content -->
+    <div class="ml-0 md:ml-20 px-4 md:px-8 lg:px-16 py-10 pb-20 md:pb-10">
+        <!-- Home Section -->
+        <section id="home" class="section min-h-screen flex flex-col justify-center">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                    Hi, I'm <span class="text-7f5af0">Karan Patani</span>
+                </h1>
+                <h2 class="text-xl md:text-2xl mb-8">
+                    Backend Engineer • AI/ML Developer • Industrial Automator
+                </h2>
+                <div class="typewriter-container h-8 md:h-10 mb-8 flex justify-center">
+                    <p id="typewriter" class="typewriter text-lg md:text-xl inline-block"></p>
+                </div>
+                <div class="flex justify-center space-x-4">
+                    <a href="https://github.com/karan2362001" target="_blank" class="bg-7f5af0 hover:bg-opacity-80 text-white px-4 py-2 rounded-full transition-all duration-300">
+                        <i class="fab fa-github mr-2"></i> GitHub
+                    </a>
+                    <a href="https://linkedin.com/in/karan-patani-37a8b0180" target="_blank" class="bg-7f5af0 hover:bg-opacity-80 text-white px-4 py-2 rounded-full transition-all duration-300">
+                        <i class="fab fa-linkedin mr-2"></i> LinkedIn
+                    </a>
+                    <a href="mailto:patanikaran@gmail.com" class="bg-7f5af0 hover:bg-opacity-80 text-white px-4 py-2 rounded-full transition-all duration-300">
+                        <i class="fas fa-envelope mr-2"></i> Email
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- About Section -->
+        <section id="about" class="section min-h-screen py-20 flex flex-col justify-center">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-8 text-7f5af0">
+                    <i class="fas fa-robot mr-3"></i> About Me
+                </h2>
+                <div class="bg-black bg-opacity-50 p-6 md:p-8 rounded-xl border border-2a2a2a">
+                    <p class="text-lg mb-6">
+                        A passionate, innovation-driven Python developer blending backend architecture with artificial intelligence, automation, and real-world systems.
+                    </p>
+                    <p class="text-lg mb-6">
+                        I specialize in <span class="text-7f5af0">AI Agent tools</span>, <span class="text-7f5af0">LangChain</span>, <span class="text-7f5af0">n8n-based workflow automation</span>, <span class="text-7f5af0">PLC integration</span>, <span class="text-7f5af0">vector search</span>, and <span class="text-7f5af0">cloud-native apps</span>.
+                    </p>
+                    <div class="bg-7f5af0 bg-opacity-10 p-4 rounded-lg border-l-4 border-7f5af0">
+                        <p class="italic">
+                            "I don't just write code — I automate, architect, and amplify intelligence."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Projects Section -->
+        <section id="projects" class="section py-20">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-12 text-7f5af0">
+                    <i class="fas fa-rocket mr-3"></i> Projects
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Project 1 -->
+                    <div class="project-card bg-black bg-opacity-50 p-6 rounded-xl cursor-pointer" onclick="openModal('project1')">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-7f5af0 bg-opacity-20 flex items-center justify-center mr-4">
+                                <i class="fas fa-robot text-7f5af0"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">AI Agent Workflow Platform</h3>
+                        </div>
+                        <p class="text-gray-300 mb-4">
+                            LangChain + n8n + QuickBooks/Xero + WhatsApp automation
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs px-2 py-1 bg-7f5af0 bg-opacity-20 rounded-full">LangChain</span>
+                            <span class="text-xs px-2 py-1 bg-7f5af0 bg-opacity-20 rounded-full">n8n</span>
+                            <span class="text-xs px-2 py-1 bg-7f5af0 bg-opacity-20 rounded-full">WhatsApp API</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 2 -->
+                    <div class="project-card bg-black bg-opacity-50 p-6 rounded-xl cursor-pointer" onclick="openModal('project2')">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-7f5af0 bg-opacity-20 flex items-center justify-center mr-4">
+                                <i class="fas fa-comments text-7f5af0"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">GRC RAG Chatbot</h3>
+                        </div>
+                        <p class="text-gray-300 mb-4">
+                            Retrieval-augmented chatbot built using LangChain & vector DBs
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs px-2 py-1 bg-7f5af0 bg-opacity-20 rounded-full">LangChain</span>
+                            <span class="text-xs px-2 py-1 bg-7f5af0 bg-opacity-20 rounded-full">Vector DB</span>
+                            <span class="text-xs px-2 py-1 bg-7f5af0 bg-opacity-20 rounded-full">RAG</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 3 -->
+                    <div class="project-card bg-black bg-opacity-50 p-6 rounded-xl cursor-pointer" onclick="openModal('project3')">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-7f5af0 bg-opacity-20 flex items-center justify-center mr-4">
+                                <i class="fas fa-shopping-basket text-7f5af0"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">Grocery Delivery APIs</h3>
+                        </div>
+                        <p class="text-gray-300 mb-4">
+                            Django REST APIs with admin panel & role-based auth
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs px-2 py-1 bg-7f5af0 bg-opacity-20 rounded-full">Django</span>
+                            <span class="text-xs px-2 py-1 bg-7f5af0 bg-opacity-20 rounded-full">DRF</span>
+                            <span class="text-xs px-2 py-1 bg-7f5af0 bg-opacity-20 rounded-full">PostgreSQL</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 4 -->
+                    <div class="project-card bg-black bg-opacity-50 p-6 rounded-xl cursor-pointer" onclick="openModal('project4')">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-7f5af0 bg-opacity-20 flex items-center justify-center mr-4">
+                                <i class="fas fa-chart-line text-7f5af0"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">Automated Trading System</h3>
+                        </div>
+                        <p class="text-gray-300 mb-4">
+                            Delta PLC + Zerodha API for real-time industrial trading
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs px-2 py-1 bg-7f5af0 bg-opacity-20 rounded-full">PLC</span>
+                            <span class="text-xs px-2 py-1 bg-7f5af0 bg-opacity-20 rounded-full">Zerodha API</span>
+                            <span class="text-xs px-2 py-1 bg-7f5af0 bg-opacity-20 rounded-full">Python</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 5 -->
+                    <div class="project-card bg-black bg-opacity-50 p-6 rounded-xl cursor-pointer" onclick="openModal('project5')">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-7f5af0 bg-opacity-20 flex items-center justify-center mr-4">
+                                <i class="fas fa-user-check text-7f5af0"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">Geo-Fenced Attendance System</h3>
+                        </div>
+                        <p class="text-gray-300 mb-4">
+                            Facial recognition + geo-coordinates tracking
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs px-2 py-1 bg-7f5af0 bg-opacity-20 rounded-full">OpenCV</span>
+                            <span class="text-xs px-2 py-1 bg-7f5af0 bg-opacity-20 rounded-full">Geolocation</span>
+                            <span class="text-xs px-2 py-1 bg-7f5af0 bg-opacity-20 rounded-full">Django</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 6 -->
+                    <div class="project-card bg-black bg-opacity-50 p-6 rounded-xl cursor-pointer" onclick="openModal('project6')">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-7f5af0 bg-opacity-20 flex items-center justify-center mr-4">
+                                <i class="fas fa-industry text-7f5af0"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">Mini SCADA</h3>
+                        </div>
+                        <p class="text-gray-300 mb-4">
+                            Python-based SCADA using Modbus/Snap7 for Siemens PLCs
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs px-2 py-1 bg-7f5af0 bg-opacity-20 rounded-full">SCADA</span>
+                            <span class="text-xs px-2 py-1 bg-7f5af0 bg-opacity-20 rounded-full">Modbus</span>
+                            <span class="text-xs px-2 py-1 bg-7f5af0 bg-opacity-20 rounded-full">Snap7</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Skills Section -->
+        <section id="skills" class="section py-20">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-12 text-7f5af0">
+                    <i class="fas fa-brain mr-3"></i> Skills
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Core Programming -->
+                    <div class="bg-black bg-opacity-50 p-6 rounded-xl border border-2a2a2a">
+                        <h3 class="text-xl font-bold mb-4 flex items-center">
+                            <i class="fas fa-code mr-3 text-7f5af0"></i> Core Programming
+                        </h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-pill px-3 py-1 bg-2a2a2a rounded-full">Python</span>
+                            <span class="skill-pill px-3 py-1 bg-2a2a2a rounded-full">Django</span>
+                            <span class="skill-pill px-3 py-1 bg-2a2a2a rounded-full">DRF</span>
+                            <span class="skill-pill px-3 py-1 bg-2a2a2a rounded-full">Prompt Engineering</span>
+                        </div>
+                    </div>
+                    
+                    <!-- AI & ML -->
+                    <div class="bg-black bg-opacity-50 p-6 rounded-xl border border-2a2a2a">
+                        <h3 class="text-xl font-bold mb-4 flex items-center">
+                            <i class="fas fa-robot mr-3 text-7f5af0"></i> AI & Machine Learning
+                        </h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-pill px-3 py-1 bg-2a2a2a rounded-full">PyTorch</span>
+                            <span class="skill-pill px-3 py-1 bg-2a2a2a rounded-full">Hugging Face</span>
+                            <span class="skill-pill px-3 py-1 bg-2a2a2a rounded-full">OpenAI</span>
+                            <span class="skill-pill px-3 py-1 bg-2a2a2a rounded-full">Gemini</span>
+                            <span class="skill-pill px-3 py-1 bg-2a2a2a rounded-full">RAG</span>
+                            <span class="skill-pill px-3 py-1 bg-2a2a2a rounded-full">LangChain</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Workflow Automation -->
+                    <div class="bg-black bg-opacity-50 p-6 rounded-xl border border-2a2a2a">
+                        <h3 class="text-xl font-bold mb-4 flex items-center">
+                            <i class="fas fa-cogs mr-3 text-7f5af0"></i> Workflow Automation
+                        </h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-pill px-3 py-1 bg-2a2a2a rounded-full">n8n</span>
+                            <span class="skill-pill px-3 py-1 bg-2a2a2a rounded-full">API Connectors</span>
+                            <span class="skill-pill px-3 py-1 bg-2a2a2a rounded-full">System Design</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Vector DBs -->
+                    <div class="bg-black bg-opacity-50 p-6 rounded-xl border border-2a2a2a">
+                        <h3 class="text-xl font-bold mb-4 flex items-center">
+                            <i class="fas fa-database mr-3 text-7f5af0"></i> Vector DBs / Search
+                        </h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-pill px-3 py-1 bg-2a2a2a rounded-full">Pinecone</span>
+                            <span class="skill-pill px-3 py-1 bg-2a2a2a rounded-full">FAISS</span>
+                            <span class="skill-pill px-3 py-1 bg-2a2a2a rounded-full">ChromaDB</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Databases -->
+                    <div class="bg-black bg-opacity-50 p-6 rounded-xl border border-2a2a2a">
+                        <h3 class="text-xl font-bold mb-4 flex items-center">
+                            <i class="fas fa-server mr-3 text-7f5af0"></i> Databases
+                        </h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-pill px-3 py-1 bg-2a2a2a rounded-full">PostgreSQL</span>
+                            <span class="skill-pill px-3 py-1 bg-2a2a2a rounded-full">SimpleDB</span>
+                            <span class="skill-pill px-3 py-1 bg-2a2a2a rounded-full">MySQL</span>
+                        </div>
+                    </div>
+                    
+                    <!-- DevOps & Cloud -->
+                    <div class="bg-black bg-opacity-50 p-6 rounded-xl border border-2a2a2a">
+                        <h3 class="text-xl font-bold mb-4 flex items-center">
+                            <i class="fas fa-cloud mr-3 text-7f5af0"></i> DevOps & Cloud
+                        </h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-pill px-3 py-1 bg-2a2a2a rounded-full">AWS (S3, EC2)</span>
+                            <span class="skill-pill px-3 py-1 bg-2a2a2a rounded-full">Railway</span>
+                            <span class="skill-pill px-3 py-1 bg-2a2a2a rounded-full">Vercel</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Industrial Systems -->
+                    <div class="bg-black bg-opacity-50 p-6 rounded-xl border border-2a2a2a">
+                        <h3 class="text-xl font-bold mb-4 flex items-center">
+                            <i class="fas fa-industry mr-3 text-7f5af0"></i> Industrial Systems
+                        </h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-pill px-3 py-1 bg-2a2a2a rounded-full">Modbus</span>
+                            <span class="skill-pill px-3 py-1 bg-2a2a2a rounded-full">Snap7</span>
+                            <span class="skill-pill px-3 py-1 bg-2a2a2a rounded-full">SCADA</span>
+                            <span class="skill-pill px-3 py-1 bg-2a2a2a rounded-full">Siemens PLC</span>
+                            <span class="skill-pill px-3 py-1 bg-2a2a2a rounded-full">Delta PLC</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Resume Section -->
+        <section id="resume" class="section py-20 min-h-screen flex flex-col justify-center">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-8 text-7f5af0">
+                    <i class="fas fa-file-alt mr-3"></i> Resume
+                </h2>
+                <div class="bg-black bg-opacity-50 p-8 rounded-xl border border-2a2a2a">
+                    <p class="text-lg mb-8">
+                        Download my full resume to learn more about my experience, education, and professional journey.
+                    </p>
+                    <a href="https://drive.google.com/file/d/1HMFH04Ryef3d9ZoyZcuM6GCoFLN31Emd/view?usp=sharing" target="_blank" class="bg-7f5af0 hover:bg-opacity-80 text-white px-6 py-3 rounded-full transition-all duration-300 inline-block">
+                        <i class="fas fa-download mr-2"></i> Download Resume (PDF)
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact" class="section py-20 min-h-screen flex flex-col justify-center">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-8 text-7f5af0">
+                    <i class="fas fa-envelope mr-3"></i> Contact
+                </h2>
+                
+                <div class="text-center">
+                    <p class="text-lg mb-8">
+                        Feel free to reach out to me via email or LinkedIn for any inquiries or opportunities.
+                    </p>
+                    <div class="flex justify-center flex-wrap gap-4">
+                        <a href="https://github.com/karan2362001" target="_blank" class="bg-7f5af0 hover:bg-opacity-80 text-white px-4 py-2 rounded-full transition-all duration-300">
+                            <i class="fab fa-github mr-2"></i> GitHub
+                        </a>
+                        <a href="https://linkedin.com/in/karan-patani-37a8b0180" target="_blank" class="bg-7f5af0 hover:bg-opacity-80 text-white px-4 py-2 rounded-full transition-all duration-300">
+                            <i class="fab fa-linkedin mr-2"></i> LinkedIn
+                        </a>
+                        <a href="https://www.instagram.com/_karanpatani_?igsh=cW14bTEyd3pseHA2&utm_source=qr" target="_blank" class="bg-7f5af0 hover:bg-opacity-80 text-white px-4 py-2 rounded-full transition-all duration-300">
+                            <i class="fab fa-instagram mr-2"></i> Instagram
+                        </a>
+                        <a href="https://wa.me/918200901537" target="_blank" class="bg-7f5af0 hover:bg-opacity-80 text-white px-4 py-2 rounded-full transition-all duration-300">
+                            <i class="fab fa-whatsapp mr-2"></i> WhatsApp
+                        </a>
+                        <a href="mailto:patanikaran@gmail.com" class="bg-7f5af0 hover:bg-opacity-80 text-white px-4 py-2 rounded-full transition-all duration-300">
+                            <i class="fas fa-envelope mr-2"></i> Email
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- Project Modals -->
+    <div id="projectModal" class="fixed inset-0 bg-black bg-opacity-80 z-50 flex items-center justify-center hidden">
+        <div class="bg-black bg-opacity-90 border border-7f5af0 rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto p-8 relative">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl">
+                <i class="fas fa-times"></i>
+            </button>
+            <div id="modalContent">
+                <!-- Content will be inserted here by JavaScript -->
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Typewriter Effect
+        const typewriterTexts = [
+            "🚀 Building Future-Ready AI Systems",
+            "🔧 Python • LangChain • PLC • Django • Deep Learning",
+            "🌐 Automation meets Intelligence"
+        ];
+        
+        let typewriterIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let typewriter = document.getElementById('typewriter');
+        
+        function typeWriter() {
+            const currentText = typewriterTexts[typewriterIndex];
+            
+            if (isDeleting) {
+                typewriter.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typewriter.textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+            }
+            
+            if (!isDeleting && charIndex === currentText.length) {
+                isDeleting = true;
+                setTimeout(typeWriter, 2000);
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                typewriterIndex = (typewriterIndex + 1) % typewriterTexts.length;
+                setTimeout(typeWriter, 500);
+            } else {
+                const speed = isDeleting ? 50 : 100;
+                setTimeout(typeWriter, speed);
+            }
+        }
+        
+        // Start the typewriter effect
+        setTimeout(typeWriter, 1000);
+        
+        // Particles Background
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Random size between 1px and 3px
+                const size = Math.random() * 2 + 1;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                // Random position
+                particle.style.left = `${Math.random() * 100}vw`;
+                particle.style.top = `${Math.random() * 100}vh`;
+                
+                // Random animation
+                const duration = Math.random() * 20 + 10;
+                particle.style.animation = `float ${duration}s linear infinite`;
+                
+                // Add to container
+                particlesContainer.appendChild(particle);
+            }
+        }
+        
+        // Create particles on load
+        window.addEventListener('load', createParticles);
+        
+        // Project Modals
+        const projects = {
+            project1: {
+                title: "AI Agent Workflow Platform",
+                description: "A comprehensive automation platform that integrates LangChain for AI agent orchestration, n8n for workflow automation, and WhatsApp API for communication. The system connects with QuickBooks/Xero for financial data processing and automates business workflows end-to-end.",
+                technologies: ["LangChain", "n8n", "WhatsApp API", "QuickBooks API", "Xero API", "Python"],
+                features: [
+                    "AI-powered decision making for business workflows",
+                    "Automated financial reporting and alerts",
+                    "WhatsApp integration for customer communication",
+                    "Customizable workflow builder",
+                    "Real-time monitoring dashboard"
+                ]
+            },
+            project2: {
+                title: "GRC RAG Chatbot",
+                description: "A retrieval-augmented generation chatbot designed for Governance, Risk, and Compliance (GRC) documentation. The system uses LangChain for orchestration and vector databases for efficient document retrieval and context-aware responses.",
+                technologies: ["LangChain", "Vector DB", "RAG", "OpenAI", "Django"],
+                features: [
+                    "Natural language understanding of GRC documents",
+                    "Context-aware responses with citations",
+                    "Document ingestion pipeline",
+                    "User authentication and session management",
+                    "Admin dashboard for content management"
+                ]
+            },
+            project3: {
+                title: "Grocery Delivery APIs",
+                description: "A complete backend system for a grocery delivery service built with Django REST Framework. Includes admin panel with role-based access control, inventory management, order processing, and delivery tracking.",
+                technologies: ["Django", "DRF", "PostgreSQL", "JWT", "Redis"],
+                features: [
+                    "User authentication with JWT",
+                    "Role-based access control (Admin, Staff, Customer)",
+                    "Real-time inventory management",
+                    "Order processing workflow",
+                    "Delivery tracking system",
+                    "Admin dashboard with analytics"
+                ]
+            },
+            project4: {
+                title: "Automated Trading System",
+                description: "An industrial-grade trading system that connects Delta PLC with Zerodha's trading API for automated execution of trading strategies. The system processes real-time market data and executes trades based on predefined algorithms.",
+                technologies: ["PLC", "Zerodha API", "Python", "Snap7", "Modbus"],
+                features: [
+                    "Real-time market data processing",
+                    "Algorithmic trading strategies",
+                    "PLC integration for industrial deployment",
+                    "Risk management controls",
+                    "Performance analytics dashboard"
+                ]
+            },
+            project5: {
+                title: "Geo-Fenced Attendance System",
+                description: "A facial recognition attendance system with geo-fencing capabilities to ensure employees are physically present at designated locations. Combines computer vision with geolocation tracking for accurate attendance marking.",
+                technologies: ["OpenCV", "Geolocation", "Django", "PostgreSQL", "Face Recognition"],
+                features: [
+                    "Facial recognition for identity verification",
+                    "Geo-fencing for location validation",
+                    "Real-time attendance tracking",
+                    "Reporting and analytics dashboard",
+                    "Mobile app for employee self-service"
+                ]
+            },
+            project6: {
+                title: "Mini SCADA",
+                description: "A Python-based SCADA system for monitoring and controlling industrial processes using Siemens PLCs. Implements Modbus and Snap7 protocols for communication with PLC hardware.",
+                technologies: ["SCADA", "Modbus", "Snap7", "Python", "Siemens PLC"],
+                features: [
+                    "Real-time process monitoring",
+                    "Historical data logging",
+                    "Alarm and event management",
+                    "Remote control capabilities",
+                    "Customizable dashboard"
+                ]
+            }
+        };
+        
+        function openModal(projectId) {
+            const project = projects[projectId];
+            const modal = document.getElementById('projectModal');
+            const modalContent = document.getElementById('modalContent');
+            
+            let featuresHtml = '';
+            project.features.forEach(feature => {
+                featuresHtml += `<li class="flex items-start mb-2">
+                    <i class="fas fa-check text-7f5af0 mr-2 mt-1"></i>
+                    <span>${feature}</span>
+                </li>`;
+            });
+            
+            let techHtml = '';
+            project.technologies.forEach(tech => {
+                techHtml += `<span class="inline-block bg-7f5af0 bg-opacity-20 text-xs px-2 py-1 rounded-full mr-2 mb-2">${tech}</span>`;
+            });
+            
+            modalContent.innerHTML = `
+                <h2 class="text-2xl md:text-3xl font-bold mb-4 text-7f5af0">${project.title}</h2>
+                <p class="text-gray-300 mb-6">${project.description}</p>
+                
+                <h3 class="text-xl font-bold mb-3">Features</h3>
+                <ul class="mb-8">
+                    ${featuresHtml}
+                </ul>
+                
+                <h3 class="text-xl font-bold mb-3">Technologies Used</h3>
+                <div class="flex flex-wrap mb-6">
+                    ${techHtml}
+                </div>
+                
+                <div class="flex space-x-4">
+                    <button class="bg-7f5af0 hover:bg-opacity-80 text-white px-6 py-2 rounded-full transition-all duration-300">
+                        <i class="fab fa-github mr-2"></i> View Code
+                    </button>
+                    <button class="bg-transparent border border-7f5af0 text-7f5af0 hover:bg-7f5af0 hover:text-white px-6 py-2 rounded-full transition-all duration-300">
+                        <i class="fas fa-external-link-alt mr-2"></i> Live Demo
+                    </button>
+                </div>
+            `;
+            
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeModal() {
+            const modal = document.getElementById('projectModal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close modal when clicking outside content
+        document.getElementById('projectModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=Karan236/karanpatani" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</html>
